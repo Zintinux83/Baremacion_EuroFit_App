@@ -25,6 +25,7 @@ import com.example.barenacion_eurofit__app.ui.recycler.data.Prueba
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import com.example.barenacion_eurofit__app.ui.recycler.data.listaPruebas
 
@@ -40,7 +41,12 @@ fun ListaPruebasScreen(
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        Text("Seleccione una prueba", fontSize = 20.sp)
+        Spacer(modifier = Modifier.fillMaxWidth().height(80.dp))
+        Text("PANTALLA DE LISTA DE PRUEBAS", fontSize = 30.sp, fontWeight = FontWeight.Bold, color= Color.Blue)
+        Spacer(modifier = Modifier.fillMaxWidth().height(40.dp))
+
+        Text("Selecciona una prueba", fontSize = 20.sp)
+        Spacer(modifier = Modifier.fillMaxWidth().height(10.dp))
 
         LazyColumn(
             modifier = Modifier.weight(1f),
@@ -85,8 +91,8 @@ fun TrialItem(prueba: Prueba, onClick: () -> Unit) {
             }
             Spacer(modifier = Modifier.weight(1f))
             Text(
-                "Ver más",
-                fontSize = 14.sp,
+                "+",
+                fontSize = 24.sp,
                 color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.clickable { /* Navegación opcional */ }
             )

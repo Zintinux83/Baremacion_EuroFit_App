@@ -15,12 +15,11 @@ class MainActivity : ComponentActivity() {
     private val _isDarkTheme = MutableStateFlow(false)
     val isDarkTheme: StateFlow<Boolean> = _isDarkTheme
 
-    @SuppressLint("StateFlowValueCalledInComposition")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             Barenacion_Eurofit__AppTheme(
-                darkTheme = isDarkTheme.value
+                //darkTheme = isDarkTheme.value //StateFlow. value should not be called within composition
             ) {
                 val navController = rememberNavController()
                 val currentIsDarkTheme = isDarkTheme.collectAsState().value
@@ -32,7 +31,6 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-
 }
 
 

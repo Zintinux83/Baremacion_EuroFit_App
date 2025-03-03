@@ -22,5 +22,13 @@ object Screens {
         fun route() = "calculo_notas/$prueba"
     }
 
+    data class IMCScreen(val userId: Int = MOCK_USER_ID) {
+        fun route() = "imc_screen/$userId"
+    }
+
+    data class ResultadosScreen(val userId: Int = MOCK_USER_ID) {
+        fun route() = "resultados_screen/$userId"
+    }
+
     const val MOCK_USER_ID = 1 // Valor predeterminado
 }
